@@ -56,6 +56,20 @@ function init() {
 # ${answers.title}
 ## Description
 ${answers.description}
+## Installation
+${answers.installation}
+
+## Usage
+${answers.usage}
+
+## Contributions
+${answers.contribution}
+
+## Tests
+${answers.test}
+
+## License
+This project is licensed under the [MIT License](LICENSE).
 `;
             writeToFile("README.md", readmeContent);
         })
