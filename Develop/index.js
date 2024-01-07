@@ -34,6 +34,22 @@ const questions = [
         name: "test",
         message: "Please enter test instructions:",
     },
+    {
+        type: "list",
+        name: "license",
+        message: "Choose a license for your application:",
+        choices: ["MIT", "Apache 2.0", "GPL 3.0", "BSD 3-Clause"],
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "Please enter your GitHub username:",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Please enter your email address:",
+    },
 ];
 
 // TODO: Create a function to write README file
@@ -56,6 +72,15 @@ function init() {
 # ${answers.title}
 ## Description
 ${answers.description}
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributions](#contributions)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
+
 ## Installation
 ${answers.installation}
 
@@ -69,7 +94,14 @@ ${answers.contribution}
 ${answers.test}
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [${answers.license}](LICENSE) license.
+![License](https://img.shields.io/badge/License-${answers.license.replace(/\s+/g, '%20')}-blue.svg)
+
+## Questions
+If you have any questions, you can reach me through:
+
+- GitHub: [${answers.github}](https://github.com/${answers.github})
+- Email: [${answers.email}](mailto:${answers.email})
 `;
             writeToFile("README.md", readmeContent);
         })
